@@ -3,11 +3,12 @@
 
 namespace R5T.F0124.Extensions
 {
-    public static class StringExtensions
+    public static partial class StringExtensions
     {
-        public static ILineSeparator ToLineSeparator(this string value)
+        /// <inheritdoc cref="F0124.IStringOperator.Trim_NewLines(string)"/>
+        public static string Trim_NewLines(this string value)
         {
-            return Instances.StringOperator_Extensions.ToLineSeparator(value);
+            return Instances.StringOperator.Trim_NewLines(value);
         }
     }
 }
