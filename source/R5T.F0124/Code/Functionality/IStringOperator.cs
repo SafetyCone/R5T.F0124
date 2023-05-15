@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
+using R5T.F0000;
 using R5T.T0132;
+using R5T.T0176;
+using R5T.T0176.Extensions;
 
 
 namespace R5T.F0124
@@ -9,6 +13,42 @@ namespace R5T.F0124
     [FunctionalityMarker]
     public partial interface IStringOperator : IFunctionalityMarker
     {
+        public WasFound<IDistinctArray<char>> Has_AnyOf(string @string, IEnumerable<char> characters)
+        {
+            var distinctEnumerable = characters.ToDistinctEnumerable();
+
+            return this.Has_AnyOf(@string, distinctEnumerable);
+        }
+
+        public WasFound<IDistinctArray<char>> Has_AnyOf(string @string, IDistinctEnumerable<char> characters)
+        {
+            var charactersFound = new List<char>();
+            foreach (var character in characters)
+            {
+                var wasFoundInString = Instances.StringOperator_Base.Contains(
+                    @string,
+                    character);
+
+                if(wasFoundInString)
+                {
+                    charactersFound.Add(character);
+                }
+            }
+
+            var exists = charactersFound.Any();
+
+            var result = charactersFound.ToArray().AsDistinctArray();
+
+            var output = WasFound.From(exists, result);
+            return output;
+        }
+
+        public string Join(string separator, IEnumerable<string> strings)
+        {
+            var output = System.String.Join(separator, strings);
+            return output;
+        }
+
         /// <summary>
         /// Trims new-lines (both Windows and Non-Windows) from the start and end of a string.
         /// Does not trim tabs.
@@ -22,12 +62,6 @@ namespace R5T.F0124
                 Instances.Characters.NewLine,
                 Instances.Characters.CarriageReturn);
 
-            return output;
-        }
-
-        public string Join(string separator, IEnumerable<string> strings)
-        {
-            var output = String.Join(separator, strings);
             return output;
         }
     }

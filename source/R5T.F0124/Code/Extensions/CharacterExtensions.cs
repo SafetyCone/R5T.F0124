@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace R5T.F0124.Extensions
 {
-    public static class CharacterExtensions
+    public static partial class CharacterExtensions
     {
-        public static N000.ILineSeparator ToLineSeparator(this char value)
+        public static string Get_String(this IEnumerable<char> characters)
         {
-            return Instances.CharacterOperator_Extensions.ToLineSeparator(value);
+            return Instances.CharacterOperator.Get_String(characters);
         }
     }
 }
