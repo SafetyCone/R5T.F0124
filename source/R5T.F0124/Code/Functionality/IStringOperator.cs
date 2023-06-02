@@ -64,5 +64,65 @@ namespace R5T.F0124
 
             return output;
         }
+
+        /// <summary>
+        /// Trims the ending (if it exists) from the end of the provided value.
+        /// </summary>
+        public string Trim_End(
+            string value,
+            string ending)
+        {
+            var output = value;
+
+            while (true)
+            {
+                bool valueEndsWithEnding = Instances.StringOperator_Base.EndsWith(
+                    value,
+                    ending);
+
+                if(valueEndsWithEnding)
+                {
+                    output = Instances.StringOperator_Base.ExceptEnding(
+                        output,
+                        ending);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// Trims the beginning (if it exists) from the start of the provided value.
+        /// </summary>
+        public string Trim_Start(
+            string value,
+            string beginning)
+        {
+            var output = value;
+
+            while (true)
+            {
+                bool valueStartsWithBeginning = Instances.StringOperator_Base.StartsWith(
+                    value,
+                    beginning);
+
+                if (valueStartsWithBeginning)
+                {
+                    output = Instances.StringOperator_Base.ExceptBeginning(
+                        output,
+                        beginning);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return output;
+        }
     }
 }
