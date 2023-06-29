@@ -77,7 +77,7 @@ namespace R5T.F0124
             while (true)
             {
                 bool valueEndsWithEnding = Instances.StringOperator_Base.EndsWith(
-                    value,
+                    output,
                     ending);
 
                 if(valueEndsWithEnding)
