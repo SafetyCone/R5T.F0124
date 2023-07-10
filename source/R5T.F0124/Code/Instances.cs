@@ -16,5 +16,7 @@ namespace R5T.F0124
         public static F0000.IStringOperator StringOperator_Base => F0000.StringOperator.Instance;
         public static Extensions.IStringOperator StringOperator_Extensions => Extensions.StringOperator.Instance;
         public static Z0000.IStrings Strings => Z0000.Strings.Instance;
+        public static IVersionOperations VersionOperations => F0124.VersionOperations.Instance;
+        public static IVersionOperator VersionOperator => F0124.VersionOperator.Instance;
     }
 }
