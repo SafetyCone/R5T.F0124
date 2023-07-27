@@ -33,6 +33,14 @@ namespace R5T.F0124
             return output;
         }
 
+        /// <summary>
+        /// Determines if the filename contains any of the characters that are not allowed in file names on the current system.
+        /// <characters-source>
+        /// <para>
+        /// See <see cref="Get_InvalidCharacters"/>.
+        /// </para>
+        /// </characters-source>
+        /// </summary>
         public WasFound<IDistinctArray<char>> Has_InvalidCharacters(string fileName)
         {
             var invalidCharacters = this.Get_InvalidCharacters();
@@ -44,6 +52,10 @@ namespace R5T.F0124
             return invalidCharactersFound;
         }
 
+        /// <summary>
+        /// Determines if the file name contains any invalid characters.
+        /// <inheritdoc cref="Has_InvalidCharacters(string)" path="/summary/characters-source"/>
+        /// </summary>
         public bool Is_Valid(string fileName)
         {
             var hasInvalidCharacters = this.Has_InvalidCharacters(fileName);

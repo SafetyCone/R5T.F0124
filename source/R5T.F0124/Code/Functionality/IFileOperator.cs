@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Threading.Tasks;
 
 using R5T.T0132;
 using R5T.T0180;
@@ -12,6 +14,51 @@ namespace R5T.F0124
     public partial interface IFileOperator : IFunctionalityMarker,
         F0000.IFileOperator
     {
+        public void In_WriterContext_Synchronous(
+            string filePath,
+            Action<TextWriter> action)
+        {
+            using var writer = Instances.StreamWriterOperator.NewWrite(
+                filePath);
+
+            action(writer);
+
+            writer.Flush();
+        }
+
+        public void In_WriterContext_Synchronous(
+            IFilePath filePath,
+            Action<TextWriter> action)
+        {
+            this.In_WriterContext_Synchronous(
+                filePath.Value,
+                action);
+        }
+
+        public async Task In_WriterContext(
+            IFilePath filePath,
+            Action<TextWriter> action)
+        {
+            using var writer = Instances.StreamWriterOperator.NewWrite(
+                filePath.Value);
+
+            action(writer);
+
+            await writer.FlushAsync();
+        }
+
+        public async Task In_WriterContext(
+            IFilePath filePath,
+            Func<TextWriter, Task> action)
+        {
+            using var writer = Instances.StreamWriterOperator.NewWrite(
+                filePath.Value);
+
+            await action(writer);
+
+            await writer.FlushAsync();
+        }
+
         public bool ShouldWrite_HandleFileExistsBehavior(
             FileExistsBehavior fileExistsBehavior,
             IFilePath filePath)
