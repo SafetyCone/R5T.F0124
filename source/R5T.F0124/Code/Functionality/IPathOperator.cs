@@ -74,7 +74,7 @@ namespace R5T.F0124
             var output = this.Get_DirectoryPath(
                 parentDirectoryPath,
                 childFileName,
-                T0180.StringOperator.Instance.ToDirectoryPath,
+                T0180.Extensions.StringExtensions.ToDirectoryPath,
                 ensureDirectoryPathIsDirectoryIndicated);
 
             return output;
@@ -142,7 +142,7 @@ namespace R5T.F0124
             var output = this.Get_FilePath(
                 parentDirectoryPath,
                 childFileName,
-                T0180.StringOperator.Instance.ToFilePath);
+                T0180.Extensions.StringExtensions.ToFilePath);
 
             return output;
         }

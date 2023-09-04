@@ -17,7 +17,7 @@ namespace R5T.F0124
         /// <summary>
         /// Enumeration child file paths with specified extension.
         /// </summary>
-        public IFilePath[] Enumerate_ChildFilePaths(
+        public IFilePath[] Get_ChildFilePaths(
             IDirectoryPath directoryPath,
             IFileExtension fileExtension)
         {

@@ -22,7 +22,7 @@ namespace R5T.F0124
 
         public T Deserialize<T>(IFilePath filePath)
         {
-            var stream = Instances.FileStreamOperator.NewRead(filePath.Value);
+            var stream = Instances.FileStreamOperator.Open_Read(filePath.Value);
 
             return this.Deserialize<T>(stream);
         }
@@ -36,7 +36,7 @@ namespace R5T.F0124
 
         public void Serialize<T>(IFilePath filePath, T obj)
         {
-            var stream = Instances.FileStreamOperator.NewWrite(filePath.Value);
+            var stream = Instances.FileStreamOperator.Open_Write(filePath.Value);
 
             this.Serialize<T>(stream, obj);
         }

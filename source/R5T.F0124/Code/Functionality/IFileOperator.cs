@@ -97,7 +97,7 @@ namespace R5T.F0124
 
             if (shouldWrite)
             {
-                this.WriteText_Synchronous(
+                this.Write_Text_Synchronous(
                     textFilePath.Value,
                     text.Value);
             }

@@ -18,7 +18,7 @@ namespace R5T.F0124
 
         /// <inheritdoc cref="Z0000.IStrings.NewLine_Windows"/>
         public ILineSeparator Windows => Instances.Strings.NewLine_Windows.ToLineSeparator();
-        
+
         /// <inheritdoc cref="Z0000.IStrings.NewLine_NonWindows"/>
         public ILineSeparator NonWindows => Instances.Strings.NewLine_NonWindows.ToLineSeparator();
     }

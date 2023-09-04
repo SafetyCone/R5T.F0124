@@ -11,8 +11,6 @@ Base functionality libraries can reference:
 
 But nothing else. It should depend solely on the functionality of the C# language and the .NET Standard 2.1 library, and base functionality libraries for prior versions of .NET.
 
-The fact this library references R5T.F0000 is a deviation. This is because the R5T.F0000 library predates the concept of a base functionality library.
-
 Base functionality libraries can contain:
 
 * Strong Types
@@ -21,3 +19,10 @@ Base functionality libraries can contain:
 * Extensions
 
 But nothing else.
+
+
+## Versus Platform Libraries
+
+Platform libraries cannot reference anything
+
+The R5T.F0000 library is a platform library. This is because the R5T.F0000 library predates the concept of a base functionality library.
