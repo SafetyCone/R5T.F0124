@@ -33,7 +33,7 @@ namespace R5T.F0124
 
         public string Get_LeadingWhitespace(string @string)
         {
-            var isNullOrEmpty = Instances.StringOperator_Base.IsNullOrEmpty(@string);
+            var isNullOrEmpty = Instances.StringOperator_Base.Is_NullOrEmpty(@string);
             if(isNullOrEmpty)
             {
                 return Instances.Strings.Empty;
@@ -42,7 +42,7 @@ namespace R5T.F0124
             int count = 0;
             foreach (var character in @string)
             {
-                if(Instances.CharacterOperator_Base.IsWhitespace(character))
+                if(Instances.CharacterOperator_Base.Is_Whitespace(character))
                 {
                     count++;
                 }
