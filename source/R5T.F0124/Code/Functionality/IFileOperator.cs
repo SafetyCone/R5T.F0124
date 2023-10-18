@@ -64,7 +64,7 @@ namespace R5T.F0124
             IFilePath filePath)
         {
             // Check if the file exists.
-            var fileExists = Instances.FileSystemOperator.FileExists(
+            var fileExists = Instances.FileSystemOperator.Exists_File(
                 filePath.Value);
 
             // If the file does exist, see if we should error, skip, or overwrite.
