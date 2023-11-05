@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using R5T.F0000;
+
 using R5T.T0132;
 
 
 namespace R5T.F0124
 {
     [FunctionalityMarker]
-    public partial interface ITextOperator : IFunctionalityMarker
+    public partial interface ITextOperator : IFunctionalityMarker,
+        L0053.ITextOperator
     {
         public string[] Format_IntoColumns(
             IEnumerable<string> lines,
@@ -63,21 +64,6 @@ namespace R5T.F0124
                     return line;
                 })
                 .Now();
-
-            return output;
-        }
-
-        public string Get_TextRepresentation(string text)
-        {
-            var output = text switch
-            {
-                Z0000.IStrings.Empty_Constant => Instances.Strings.Empty_TextRepresentation,
-                Z0000.IStrings.NewLine_NonWindows_Constant => Instances.Strings.NewLine_TextRepresentation,
-                Z0000.IStrings.NewLine_Windows_Constant => Instances.Strings.NewLine_Windows,
-                Z0000.IStrings.Null_Constant => Instances.Strings.Null_TextRepresentation,
-                Z0000.IStrings.Tab_Constant => Instances.Strings.Tab_TextRepresentation,
-                _ => text
-            };
 
             return output;
         }
