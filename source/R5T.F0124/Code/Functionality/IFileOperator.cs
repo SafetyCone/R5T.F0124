@@ -15,18 +15,6 @@ namespace R5T.F0124
         F0000.IFileOperator
     {
         public void In_WriterContext_Synchronous(
-            string filePath,
-            Action<TextWriter> action)
-        {
-            using var writer = Instances.StreamWriterOperator.NewWrite(
-                filePath);
-
-            action(writer);
-
-            writer.Flush();
-        }
-
-        public void In_WriterContext_Synchronous(
             IFilePath filePath,
             Action<TextWriter> action)
         {
@@ -39,7 +27,7 @@ namespace R5T.F0124
             IFilePath filePath,
             Action<TextWriter> action)
         {
-            using var writer = Instances.StreamWriterOperator.NewWrite(
+            using var writer = Instances.StreamWriterOperator.New_Write(
                 filePath.Value);
 
             action(writer);
@@ -51,7 +39,7 @@ namespace R5T.F0124
             IFilePath filePath,
             Func<TextWriter, Task> action)
         {
-            using var writer = Instances.StreamWriterOperator.NewWrite(
+            using var writer = Instances.StreamWriterOperator.New_Write(
                 filePath.Value);
 
             await action(writer);
