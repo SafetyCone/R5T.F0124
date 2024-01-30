@@ -1,9 +1,9 @@
 using System;
 
+using R5T.L0089.T000;
 using R5T.T0132;
 using R5T.T0176;
 using R5T.T0176.Extensions;
-using R5T.T0221;
 
 
 namespace R5T.F0124
@@ -11,13 +11,10 @@ namespace R5T.F0124
     [FunctionalityMarker]
     public partial interface IFileNameOperator : IFunctionalityMarker
     {
-        private static F0000.IPathOperator PathOperator_Base => F0000.PathOperator.Instance;
+#pragma warning disable IDE1006 // Naming Styles
+        private static F0000.IPathOperator _Base => F0000.PathOperator.Instance;
+#pragma warning restore IDE1006 // Naming Styles
 
-
-        //public (IFileName fileName, bool wasModified) Get_FileName(string filename)
-        //{
-
-        //}
 
         public string Ensure_IsValid(string fileName)
         {
@@ -25,10 +22,10 @@ namespace R5T.F0124
             return output;
         }
 
-        /// <inheritdoc cref="F0000.IPathOperator.GetInvalidFileNameCharacters"/>
+        /// <inheritdoc cref="L0066.IPathOperator.Get_InvalidFileNameCharacters"/>
         public IDistinctArray<char> Get_InvalidCharacters()
         {
-            var output = PathOperator_Base.GetInvalidFileNameCharacters().AsDistinctArray();
+            var output = _Base.Get_InvalidFileNameCharacters().AsDistinctArray();
             return output;
         }
 

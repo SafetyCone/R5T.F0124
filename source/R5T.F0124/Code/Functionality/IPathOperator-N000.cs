@@ -16,7 +16,7 @@ namespace R5T.F0124.N000
             bool ensureDirectoryPathIsDirectoryIndicated)
         {
             var output = ensureDirectoryPathIsDirectoryIndicated
-                ? F0002.EnsureIsDirectoryIndicated(directoryPath)
+                ? F0002.Ensure_IsDirectoryIndicated(directoryPath)
                 : directoryPath
                 ;
 

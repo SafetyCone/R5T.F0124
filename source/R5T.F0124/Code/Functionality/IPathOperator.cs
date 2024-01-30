@@ -39,7 +39,7 @@ namespace R5T.F0124
             IEnumerable<string> childDirectoryNames,
             bool ensureDirectoryPathIsDirectoryIndicated = IValues.Default_EnsureDirectoryPathIsDirectoryIndicated)
         {
-            var directoryPath = Instances.PathOperator.GetDirectoryPath(
+            var directoryPath = Instances.PathOperator.Get_DirectoryPath(
                 parentDirectoryPath,
                 childDirectoryNames);
 
@@ -114,7 +114,7 @@ namespace R5T.F0124
             string parentDirectoryPath,
             string childFileName)
         {
-            var output = Instances.PathOperator.GetFilePath(
+            var output = Instances.PathOperator.Get_FilePath(
                 parentDirectoryPath,
                 childFileName);
 

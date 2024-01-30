@@ -12,7 +12,7 @@ namespace R5T.F0124
     {
         public IDirectoryPath Get_DirectoryPath(IFilePath filePath)
         {
-            var output = Instances.PathOperator.GetParentDirectoryPath_ForFile(
+            var output = Instances.PathOperator.Get_ParentDirectoryPath_ForFile(
                 filePath.Value)
                 .ToDirectoryPath();
 
