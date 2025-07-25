@@ -15,7 +15,7 @@ namespace R5T.F0124
         public static IFilePathOperator FilePathOperator => F0124.FilePathOperator.Instance;
         public static F0000.IFileStreamOperator FileStreamOperator => F0000.FileStreamOperator.Instance;
         public static F0000.IFileSystemOperator FileSystemOperator => F0000.FileSystemOperator.Instance;
-        public static F0000.INullOperator NullOperator => F0000.NullOperator.Instance;
+        public static L0066.INullOperator NullOperator => L0066.NullOperator.Instance;
         public static IOperatingSystemOperator OperatingSystemOperator => F0124.OperatingSystemOperator.Instance;
         public static F0002.IPathOperator PathOperator => F0002.PathOperator.Instance;
         public static N000.IPathOperator PathOperator_N000 => N000.PathOperator.Instance;
