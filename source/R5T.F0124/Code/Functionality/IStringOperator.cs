@@ -106,7 +106,7 @@ namespace R5T.F0124
             return output;
         }
 
-        /// <inheritdoc cref="L0066.IStringOperator.Trim_End(String, String)"/>
+        /// <inheritdoc cref="F10Y.L0000.IStringOperator.Trim_End(String, String)"/>
         public string Trim_End(
             string value,
             string ending)

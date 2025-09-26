@@ -5,7 +5,7 @@ namespace R5T.F0124.Extensions
 {
     public static partial class StringExtensions
     {
-        /// <inheritdoc cref="L0066.IStringOperator.Trim_End(string, string)"/>
+        /// <inheritdoc cref="F10Y.L0000.IStringOperator.Trim_End(string, string)"/>
         public static string Trim_End(this string value,
             string ending)
         {
@@ -14,13 +14,13 @@ namespace R5T.F0124.Extensions
                 ending);
         }
 
-        /// <inheritdoc cref="L0066.IStringOperator.Trim_NewLines(string)"/>
+        /// <inheritdoc cref="F10Y.L0000.IStringOperator.Trim_NewLines(string)"/>
         public static string Trim_NewLines(this string value)
         {
             return Instances.StringOperator_Base.Trim_NewLines(value);
         }
 
-        /// <inheritdoc cref="L0066.IStringOperator.Trim_Start(string, string)"/>
+        /// <inheritdoc cref="F10Y.L0000.IStringOperator.Trim_Start(string, string)"/>
         public static string Trim_Start(this string value,
             string beginning)
         {
