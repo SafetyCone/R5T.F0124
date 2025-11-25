@@ -22,7 +22,7 @@ namespace R5T.F0124
             return output;
         }
 
-        /// <inheritdoc cref="L0066.IPathOperator.Get_InvalidFileNameCharacters"/>
+        /// <inheritdoc cref="F10Y.L0000.IPathOperator.Get_InvalidFileNameCharacters"/>
         public IDistinctArray<char> Get_InvalidCharacters()
         {
             var output = _Base.Get_InvalidFileNameCharacters().AsDistinctArray();
